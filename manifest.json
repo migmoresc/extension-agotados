@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Productos agotados",
+    "version": "1.0",
+    "description": "Oculta los productos agotados.",
+    "icons": {
+      "48": "assets/icons/48/logo.png"
+    },
+    "background": {
+      "service_worker": "scripts/background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "48": "assets/icons/48/logo.png"
+      }
+    },
+    "permissions": [
+      "tabs"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.coolmod.com/*",
+                "https://www.pccomponentes.com/*"
+            ],
+            "js": [
+                "scripts/jquery.js",
+                "scripts/script.js"
+            ]
+        }
+    ],
+    "host_permissions": [
+      "https://www.coolmod.com/*"
+    ]
+  }
+  
